@@ -1,8 +1,9 @@
-# React + Vite
+## BreezyNow - Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BreezyNow is a simple and intuitive weather app that lets users search for current weather conditions in any city or country. Using a search bar, users can instantly retrieve up-to-date information, including:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌡️ Temperature
+📋 Weather Description
+💧 Humidity Level
+🌬️ Wind Speed
+The app fetches real-time weather data from an API, providing accurate and reliable information. It's a great project for anyone looking to quickly check the weather anywhere in the world.
