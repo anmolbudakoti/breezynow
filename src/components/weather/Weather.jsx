@@ -9,11 +9,13 @@ export default function Weather() {
     const [error, setError] = useState(null)
     const [weatherData, setWeatherData] = useState(null)
 
+    const apiKey = import.meta.env.VITE_API_KEY;
+
     async function fetchWeatherData(search) {
         try {
             setLoading(true)
 
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=408e30f53c016b326e8fcbdb1a65c2c3`)
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apiKey}`)
             const data = await response.json()
 
             if (data) {
@@ -43,6 +45,8 @@ export default function Weather() {
     useEffect(() => {
         fetchWeatherData("haridwar")
     }, [])
+
+    console.log(apiKey)
 
 
     return (
