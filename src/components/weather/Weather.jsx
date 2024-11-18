@@ -46,12 +46,11 @@ export default function Weather() {
         fetchWeatherData("haridwar")
     }, [])
 
-    console.log(apiKey)
 
 
     return (
         <div className='text-white p-6 lg:p-14 rounded-xl text-center'>
-            <h2 className='text-xl mb-6 md:text-2xl lg:text-3xl xl:text-4xl p-3'>From Sunshine to Snowfall <br/><code className='font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Real-Time</code><br/> Weather at Your Fingertips!</h2>
+            <h2 className='text-xl mb-6 md:text-2xl lg:text-3xl xl:text-4xl p-3'>From Sunshine to Snowfall <br /><code className='font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Real-Time</code><br /> Weather at Your Fingertips!</h2>
             <Search search={search} setSearch={setSearch} handleSearch={handleSearch} />
             {
                 loading ? <div className='loading'>Loading....</div> :
@@ -60,7 +59,7 @@ export default function Weather() {
                             <h2>{weatherData?.name}, <span>{weatherData?.sys?.country}</span></h2>
                         </div>
                         <img src="https://cdn-icons-png.flaticon.com/128/17093/17093401.png" alt="weather-image" className='w-20 h-18 lg:w-24 lg:h-22 xl:w-26 xl:h-24 animate-pulse' />
-                        <div className='text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold xl:p-6'>{Math.floor((weatherData?.main?.temp - 32) * 5 / 9)} <small><sup>&deg;</sup>C</small></div>
+                        <div className='text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold xl:p-6'>{Math.round(weatherData?.main?.temp - 273.15)} <small><sup>&deg;</sup>C</small></div>
                         <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                             {weatherData && weatherData.weather && weatherData.weather[0] ? weatherData.weather[0].description.toUpperCase() : ""}
                         </p>
